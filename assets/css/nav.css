@@ -1,0 +1,50 @@
+/* untuk menampilkan css pada bagian navbar */
+.navbar {
+  overflow: hidden;
+  background-color: #f4f3f3;
+  padding: 5px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 7%;
+}
+
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar-link {
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  color: black;
+  font-weight: bold;
+}
+
+.navbar-logo {
+  width: 50px;
+  margin-left: auto;
+}
+
+.navbar-contact-btn {
+  padding: 10px;
+  background-color: #111727;
+  color: white;
+  font-size: 15px;
+  width: 100%;
+  border-radius: 10%;
+  margin-top: 30px;
+  text-decoration: none;
+}
