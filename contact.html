@@ -13,30 +13,33 @@
               <div>
                      <h3 class="contact-header">GET IN TOUCH</h3>
 
-                     <form action="index.html" class="form" method="post">
+                     <!-- Menu Form -->
+                     <div class="form">
                             <label class="label-style" for="name">Name</label>
                             <input class="input-style" type="text" id="name"></input>
-              
+
                             <label class="label-style" for="email">Email</label>
                             <input class="input-style" type="email" id="email"></input>
-              
+
                             <label class="label-style" for="phoneNumber">Phone Number</label> 
                             <input class="input-style" type="text" id="phoneNumber"></input>
-              
+
                             <label class="label-style" for="subject">Subject</label>
                             <select class="input-style" name="subject" id="subject">
-                                   <option value="">Fronted Developer</option>
-                                   <option value="">Backend Developer</option>
-                                   <option value="">Fullstack Developer</option>
+                                   <option>Fronted Developer</option>
+                                   <option>Backend Developer</option>
+                                   <option>Fullstack Developer</option>
                             </select>
-              
+
                             <label class="label-style" for="message">Your Message</label>
-                            <textarea class="input-txtarea" name="message" id="" cols="30" rows="10"></textarea>
-              
-                            <button class="btn-submit" type="submit" >Submit</button>
-                     </form>   
+                            <textarea class="input-txtarea" name="message" id="message" cols="30" rows="10"></textarea>
+
+                            <button class="btn-submit" onclick="submitData()">Submit</button>
+                     </div>        
               </div>
        </div>
-       
+
+       <!-- JavaScript -->
+       <script src="assets/js/contact.js"></script>
 </body>
 </html>
