@@ -1,0 +1,342 @@
+/* Project Form */
+.project-form {
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+}
+
+.form-container {
+  width: 500px;
+}
+
+.form-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.label {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.project-name input {
+  width: 96.5%;
+  font-size: 16px;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  background: #f4f3f3;
+  border: 1px solid #c4c4c4;
+  border-radius: 8px;
+}
+
+.date {
+  display: flex;
+  justify-content: left;
+  gap: 20px;
+}
+
+.date-list {
+  display: flex;
+  flex-direction: column;
+  width: 47%;
+}
+
+.date-list label {
+  margin-bottom: 0;
+}
+
+.date-list input {
+  width: 96.5%;
+  font-size: 16px;
+  padding: 8px;
+  margin-top: 5px;
+  background: #f4f3f3;
+  border: 1px solid #c4c4c4;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.project-form form textarea,
+select {
+  width: 96.5%;
+  font-size: 16px;
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  background: #f4f3f3;
+  border: 1px solid #c4c4c4;
+  border-radius: 8px;
+}
+
+.project-form form textarea {
+  height: 150px;
+  resize: none;
+}
+
+.tech-options-row {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.tech-options-column {
+  padding-top: 8px;
+}
+
+.tech-option {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.tech-option input {
+  margin-right: 8px;
+  margin-bottom: 10px;
+}
+
+.tech-option label {
+  margin-bottom: 8px;
+  color: #514a4a;
+}
+
+.input-image-group {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  background: #f4f3f3;
+  border: 1px solid #c4c4c4;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.input-project-image {
+  width: 90%;
+  margin-top: 0;
+  font-size: 16px;
+  outline: none;
+}
+
+.input-project-image::-webkit-file-upload-button {
+  background: #e4e4e4;
+  color: #b2abab;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: #b4b0b0;
+  cursor: pointer;
+}
+
+.input-icon-container {
+  padding: 0 8px;
+  border-radius: 8px;
+  margin-left: 8px;
+  margin-top: 4px;
+}
+
+.button-group {
+  text-align: right;
+}
+
+.project-form form button {
+  padding: 5px;
+  background-color: #111727;
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  width: 100px;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Project list */
+.project-list {
+  background: #f8f8f8;
+  padding: 20px 100px;
+}
+
+.project-list-title {
+  padding: 40px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.project-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
+}
+
+.project-list-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 1rem 2rem;
+  margin: 10px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.356);
+}
+
+.project-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 600/300;
+  border-radius: 10px;
+}
+
+.icon-tech i {
+  font-size: 24px;
+  margin-right: 10px;
+}
+
+.btn-group {
+  text-align: center;
+  width: 100%;
+}
+
+.btn-group .btn-edit {
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 10px;
+  background: #111727;
+  color: #f4f3f3;
+  width: 40%;
+  margin-right: 20px;
+}
+
+.btn-group .btn-post {
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 10px;
+  background: #111727;
+  color: #f4f3f3;
+  width: 40%;
+}
+
+.project-list h1 a {
+  text-decoration: none;
+  color: #000000;
+  font-size: 20px;
+}
+
+.detail-project-content {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 20px;
+  margin-top: 0;
+}
+
+.project-list-item p {
+  margin-top: 20px;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: justify;
+}
+
+@media only screen and (max-width: 576px) {
+  .form-container {
+    width: 70%;
+  }
+
+  .form-container h1 {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+  .tech-options-row {
+    width: 60%;
+  }
+
+  .project-list-item p {
+    margin-top: 20px;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: justify;
+  }
+
+  .date {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .date-list {
+    width: 100%;
+  }
+
+  .btn-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .btn-group .btn-edit {
+    margin-right: 0;
+  }
+
+  .detail-container img {
+    width: 100%;
+  }
+
+  .project-detail-container {
+    width: 100%;
+  }
+
+  .detail {
+    width: 100%;
+  }
+
+  .detail-duration,
+  .detail-tech {
+    padding: 0 20px;
+  }
+
+  .project-name input {
+    width: 96.5%;
+    font-size: 16px;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background: #f4f3f3;
+    border: 1px solid #c4c4c4;
+    border-radius: 8px;
+  }
+
+  .project-form form textarea,
+  select {
+    width: 96.5%;
+    font-size: 16px;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    background: #f4f3f3;
+    border: 1px solid #c4c4c4;
+    border-radius: 8px;
+  }
+
+  .project-form form textarea {
+    height: 150px;
+    resize: none;
+  }
+
+  .project-form form button {
+    padding: 5px;
+    background-color: #111727;
+    color: white;
+    font-weight: bold;
+    font-size: 13px;
+    width: 100px;
+    border-radius: 10px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    border: none;
+    cursor: pointer;
+  }
+}

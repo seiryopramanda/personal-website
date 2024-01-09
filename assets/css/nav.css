@@ -2,7 +2,6 @@
 .navbar {
   overflow: hidden;
   background-color: #f4f3f3;
-  padding: 5px;
   position: fixed;
   width: 100%;
   top: 0;
@@ -47,4 +46,51 @@
   border-radius: 10%;
   margin-top: 30px;
   text-decoration: none;
+}
+
+.hamburger-navbar-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f3f3;
+}
+
+.hamburger-navbar-link.hamburger-active {
+  background-color: #111727;
+}
+
+.hamburger-navbar-link {
+  display: none;
+  text-align: center;
+  color: white;
+  font-size: 20px;
+  text-decoration: none;
+  border-radius: 10px;
+  margin: 5px 150px;
+  background-color: darkgray;
+}
+
+#hamburger-button {
+  display: none;
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 576px) {
+  .navbar-link {
+    display: none;
+  }
+
+  .navbar-contact-btn {
+    display: none;
+  }
+
+  .hamburger-navbar-link {
+    display: block;
+  }
+
+  #hamburger-button {
+    display: block;
+  }
 }

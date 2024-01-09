@@ -3,12 +3,52 @@
 <head>
        <meta charset="UTF-8">
        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <link rel="stylesheet" href="assets/css/nav.css">
        <link rel="stylesheet" href="assets/css/index.css">
        <link rel="stylesheet" href="assets/css/contact.css">
+       <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
        <title>Contact Me</title>
 </head>
 
 <body>
+       <!-- Bagian Navbar -->
+    <nav class="navbar">
+       <ul class="navbar-ul">
+         <div class="navbar-menu">
+           <li>
+             <img src="assets/img/logo.png" alt="Logo" class="navbar-logo" />
+           </li>
+           <li><a href="index.html" class="navbar-link">Home</a></li>
+           <li>
+             <a href="project.html" class="navbar-link">My Projects</a>
+           </li>
+         </div>
+         <div>
+           <li>
+             <a href="contact.html" class="navbar-contact-btn active">Contact Me</a>
+           </li>
+           <i
+             class="fa-solid fa-bars fa-2x"
+             style="cursor: pointer"
+             id="hamburger-button"
+             onclick="openHamburger()"
+           ></i>
+         </div>
+       </ul>
+       <div
+         id="hamburger-navbar-container"
+         class="hamburger-navbar-container hidden"
+       >
+         <a class="hamburger-navbar-link" href="index.html"
+           >Home</a
+         >
+         <a class="hamburger-navbar-link" href="project.html">My Projects</a>
+         <a class="hamburger-navbar-link hamburger-active" href="contact.html">Contact Me</a>
+       </div>
+     </nav>
        <div class="container">
               <div>
                      <h3 class="contact-header">GET IN TOUCH</h3>
@@ -26,7 +66,7 @@
 
                             <label class="label-style" for="subject">Subject</label>
                             <select class="input-style" name="subject" id="subject">
-                                   <option>Fronted Developer</option>
+                                   <option>Frontend Developer</option>
                                    <option>Backend Developer</option>
                                    <option>Fullstack Developer</option>
                             </select>
@@ -41,5 +81,6 @@
 
        <!-- JavaScript -->
        <script src="assets/js/contact.js"></script>
+       <script src="assets/js/nav.js"></script>
 </body>
 </html>

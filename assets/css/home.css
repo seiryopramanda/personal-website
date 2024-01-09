@@ -1,9 +1,5 @@
 body {
-  font-family: "Poppins", sans-serif;
-  box-sizing: border-box;
-  margin: 0;
   background-color: #e3e7eb;
-  place-items: center;
   padding-top: 80px;
 }
 
@@ -16,28 +12,34 @@ body {
   padding: 50px;
   box-shadow: 0px 0px 10px rgb(180, 180, 180);
   border-radius: 8px;
-  position: relative;
-  display: grid;
-  grid-template-columns: 700px 300px;
+  display: flex;
+  flex-direction: column;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.356);
 }
 
 .subject {
   font-size: 35px;
-  font-weight: bold;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 .content {
+  display: flex;
   text-align: justify;
-  padding: 0;
+}
+
+.left {
+  flex: 70%;
+}
+
+.left p {
+  margin-right: 80px;
 }
 
 .button-container {
   display: flex;
   justify-content: space-between;
-  width: 300px;
-  margin: 20px 0;
+  width: 50%;
+  margin: 40px 0;
   gap: 20px;
 }
 
@@ -47,7 +49,6 @@ body {
   width: 120px;
   height: 40px;
   margin: 30px 0;
-  box-sizing: border-box;
   place-items: center;
   color: #fff;
   text-decoration: none;
@@ -72,7 +73,7 @@ body {
   margin: 20px;
   border-radius: 50%;
   background-color: black;
-  padding: 12px;
+  padding: 10px;
   transform: translate(-50%, -50%);
 }
 
@@ -88,14 +89,16 @@ body {
 
 .foto {
   background-color: #f8f5f5;
-  width: 250px;
-  padding: 20;
-  margin: auto 90px;
-  height: auto;
+  width: 100%;
+  margin: 0 40px;
+  height: fit-content;
   border: 1px solid gainsboro;
   box-shadow: 0px 0px 10px rgb(180, 180, 180);
   text-align: center;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex: 20%;
 }
 
 .foto img {
@@ -106,6 +109,11 @@ body {
   overflow: hidden;
 }
 
+.foto h2 {
+  font-size: 25px;
+  padding: 0 20px;
+}
+
 .foto h2,
 .foto h5 {
   margin: 3px 0;
@@ -113,4 +121,40 @@ body {
 
 .foto h5 {
   font-weight: normal;
+}
+
+@media only screen and (max-width: 576px) {
+  .container {
+    padding: 30px;
+  }
+
+  .subject {
+    font-size: 28px;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+
+  .left p {
+    margin-right: 7px;
+  }
+
+  .button-container {
+    justify-content: space-evenly;
+    width: 100%;
+  }
+
+  .icon-sosmed {
+    transform: translate(80%, -50%);
+  }
+
+  .foto {
+    width: 40%;
+    margin: auto;
+  }
+
+  .foto h2 {
+    font-size: 18px;
+  }
 }
