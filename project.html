@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link rel="stylesheet" href="assets/css/nav.css" />
+    <link rel="stylesheet" href="assets/css/home.css" />
+    <link rel="stylesheet" href="assets/css/project.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>Personal Website Seiryo</title>
+  </head>
+
+  <body>
+    <!-- Bagian Navbar -->
+    <nav class="navbar">
+      <ul class="navbar-ul">
+        <div class="navbar-menu">
+          <li>
+            <img src="assets/img/logo.png" alt="Logo" class="navbar-logo" />
+          </li>
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li>
+            <a href="project.html" class="navbar-link active">My Projects</a>
+          </li>
+        </div>
+        <div>
+          <li>
+            <a href="contact.html" class="navbar-contact-btn">Contact Me</a>
+          </li>
+        </div>
+      </ul>
+    </nav>
+
+    <div class="project">
+      <div class="project-form">
+        <div class="form-container">
+          <form onsubmit="addProject(event)">
+            <h1>ADD MY PROJECT</h1>
+            <div class="project-name">
+              <label for="input-project-name" class="label">Project Name</label>
+              <input type="text" id="input-project-name" />
+            </div>
+
+            <div class="date">
+              <div class="date-list">
+                <label for="input-start-date" class="label">Start Date</label>
+                <input type="date" id="input-start-date" />
+              </div>
+              <div class="date-list">
+                <label for="input-end-date" class="label">End Date</label>
+                <input type="date" id="input-end-date" />
+              </div>
+            </div>
+
+            <div class="tech-area">
+              <label for="desc" class="label">Description</label>
+              <textarea id="desc"></textarea>
+            </div>
+
+            <div class="tech">
+              <label id="tech-label" class="label">Technologies</label>
+
+              <div class="tech-options-row">
+                <div class="tech-options-column">
+                  <div class="tech-option">
+                    <input type="checkbox" id="nodejs" value="nodejs" />
+                    <label for="nodejs">Node Js</label>
+                  </div>
+                  <div class="tech-option">
+                    <input type="checkbox" id="reactjs" value="reactjs" />
+                    <label for="reactjs">React Js</label>
+                  </div>
+                </div>
+
+                <div class="tech-options-column">
+                  <div class="tech-option">
+                    <input type="checkbox" id="vuejs" value="vuejs" />
+                    <label for="vuejs">Vue Js</label>
+                  </div>
+                  <div class="tech-option">
+                    <input type="checkbox" id="angularjs" value="angularjs" />
+                    <label for="angularjs">Angular Js</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="image">
+              <label class="label">Upload Image</label>
+              <div class="input-image-group">
+                <input
+                  type="file"
+                  id="input-project-image"
+                  class="input-project-image"
+                />
+                <div class="input-icon-container">
+                  <img
+                    class="input-icon"
+                    src="assets/icon/file.png"
+                    alt="file"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="button-group">
+              <button>Submit</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="project-list">
+        <div class="project-list-title">
+          <h3>MY PROJECT</h3>
+        </div>
+        <div class="project-content" id="contents"></div>
+      </div>
+    </div>
+
+    <script src="assets/js/project.js"></script>
+  </body>
+</html>
