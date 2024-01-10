@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="assets/css/nav.css" />
+    <link rel="stylesheet" href="assets/css/testimonial.css" />
+    <link rel="stylesheet" href="assets/css/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <title>Testimonials</title>
+  </head>
+
+  <body>
+    <!-- Bagian Navbar -->
+    <nav class="navbar">
+      <ul class="navbar-ul">
+        <div class="navbar-menu">
+          <li>
+            <img src="assets/img/logo.png" alt="Logo" class="navbar-logo" />
+          </li>
+          <li><a href="index.html" class="navbar-link">Home</a></li>
+          <li>
+            <a href="project.html" class="navbar-link">My Projects</a>
+          </li>
+          <li>
+            <a href="testimonial.html" class="navbar-link active"
+              >Testimonials</a
+            >
+          </li>
+        </div>
+        <div>
+          <li>
+            <a href="contact.html" class="navbar-contact-btn">Contact Me</a>
+          </li>
+          <i
+            class="fa-solid fa-bars fa-2x"
+            style="cursor: pointer"
+            id="hamburger-button"
+            onclick="openHamburger()"
+          ></i>
+        </div>
+      </ul>
+      <div
+        id="hamburger-navbar-container"
+        class="hamburger-navbar-container hidden"
+      >
+        <a class="hamburger-navbar-link" href="index.html">Home</a>
+        <a class="hamburger-navbar-link" href="project.html">My Projects</a>
+        <a
+          class="hamburger-navbar-link hamburger-active"
+          href="testimonial.html"
+          >Testimonials</a
+        >
+        <a class="hamburger-navbar-link" href="contact.html">Contact Me</a>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h1>My Testimonials</h1>
+      <section class="testimonials" id="testimonials"></section>
+    </div>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/nav.js"></script>
+    <script src="assets/js/testimonial.js"></script>
+  </body>
+</html>
