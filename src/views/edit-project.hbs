@@ -1,0 +1,204 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/project.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <title>My Blog - {{title}}</title>
+    <style>
+      @import
+      url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); * {
+      font-family: "Poppins", sans-serif; }
+    </style>
+  </head>
+
+  <body style="background-color: #e3e7eb">
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+      <div class="container-fluid px-5">
+        <a class="navbar-brand" href="/">
+          <img src="/assets/img/logo.png" alt="" width="50" height="auto" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link active" aria-current="page" href="/project">Add
+                Project</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="/testimonial">Testimonials</a>
+            </li>
+          </ul>
+
+          <a class="btn btn-dark" role="button" href="/contact">
+            Contact Me
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Form Body -->
+    <div class="container px-5 my-5" style="max-width: 500px">
+      <form action="/edit-project" method="POST">
+        <legend class="text-center fw-bold mb-4">EDIT MY PROJECT</legend>
+        <input type="hidden" name="id" value="{{data.id}}" />
+
+        <div class="mb-3">
+          <label for="title" class="form-label fw-bolder">Project Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            name="title"
+            value="{{data.title}}"
+          />
+        </div>
+
+        <div class="row mb-3">
+          <div class="col-sm-6 col-12">
+            <label for="startDate" class="form-label fw-bolder">Start Date</label>
+            <input
+              type="date"
+              class="form-control"
+              id="startDate"
+              name="startDate"
+              value="{{data.startDate}}"
+            />
+          </div>
+          <div class="col-sm-6 col-12 mt-3 mt-sm-auto">
+            <label for="endDate" class="form-label fw-bolder">End Date</label>
+            <input
+              type="date"
+              class="form-control"
+              id="endDate"
+              name="endDate"
+              value="{{data.endDate}}"
+            />
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="desc" class="form-label fw-bolder">Description</label>
+          <div class="form-floating">
+            <textarea
+              class="form-control"
+              name="desc"
+              id="desc"
+              style="height: 100px"
+            >{{data.desc}}</textarea>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="tech" class="form-label fw-bolder">Technologies</label>
+          <div class="row">
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="technologies"
+                  value="fa-node-js"
+                  id="node-js"
+                  {{isChecked data.technologies "fa-node-js"}}
+                />
+                <label class="form-check-label" for="node-js"> Node Js </label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="technologies"
+                  value="fa-react"
+                  id="react"
+                  {{isChecked data.technologies "fa-react"}}
+                />
+                <label class="form-check-label" for="react"> React Js </label>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="technologies"
+                  value="fa-vuejs"
+                  id="vuejs"
+                  {{isChecked data.technologies "fa-vuejs"}}
+                />
+                <label class="form-check-label" for="vuejs"> Vue Js </label>
+              </div>
+
+              <div class="form-check">
+                <input
+                  class="form-check-input"
+                  type="checkbox"
+                  name="technologies"
+                  value="fa-angular"
+                  id="angular"
+                  {{isChecked data.technologies "fa-angular"}}
+                />
+                <label class="form-check-label" for="angular">
+                  Angular Js
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <label for="image" class="form-label">Upload Image</label>
+          <input
+            class="form-control"
+            type="file"
+            name="image"
+            id="image"
+            accept="image/*"
+          />
+          <!-- <img class="input-icon" src="assets/icon/file.png" alt="file" /> -->
+        </div>
+
+        <!-- Button Submit  -->
+        <div class="my-4 d-flex justify-content-end">
+          <button type="submit" class="btn btn-dark mb-5">Edit</button>
+        </div>
+      </form>
+    </div>
+
+  </body>
+</html>
