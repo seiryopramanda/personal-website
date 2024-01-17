@@ -1,0 +1,132 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <title>Contact</title>
+    <style>
+      @import
+      url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); * {
+      font-family: "Poppins", sans-serif; }
+    </style>
+  </head>
+
+  <body style="background-color: #e3e7eb">
+    <!-- Navbar Section -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+      <div class="container-fluid px-5">
+        <a class="navbar-brand" href="/">
+          <img src="/assets/img/logo.png" alt="" width="50" height="auto" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="/project">Add Project</a>
+            </li>
+            <li class="nav-item mx-2">
+              <a class="nav-link" href="/testimonial">Testimonials</a>
+            </li>
+          </ul>
+
+          <a class="btn btn-dark" role="button" href="/contact">
+            Contact Me
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Container Body -->
+    <div class="container px-5 my-5" style="max-width: 500px">
+      <form>
+        <legend class="text-center fw-bold">GET IN TOUCH</legend>
+        <div class="mb-3">
+          <label for="name" class="form-label fw-bolder">Name</label>
+          <input type="text" class="form-control" id="name" />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label fw-bolder">Email</label>
+          <input type="email" class="form-control" id="email" />
+        </div>
+        <div class="mb-3">
+          <label for="phoneNumber" class="form-label fw-bolder">Phone Number</label>
+          <input type="text" class="form-control" id="phoneNumber" />
+        </div>
+        <div class="mb-3">
+          <label for="subject" class="form-label fw-bolder">Subject</label>
+          <select
+            class="form-select"
+            aria-label="Default select example"
+            name="subject"
+            id="subject"
+          >
+            <option selected>Please choose your subject</option>
+            <option>Frontend Developer</option>
+            <option>Backend Developer</option>
+            <option>Fullstack Developer</option>
+          </select>
+        </div>
+        <div class="mb-3">
+          <label for="message" class="form-label fw-bolder">Your Message</label>
+          <div class="form-floating">
+            <textarea
+              class="form-control"
+              placeholder="Leave a comment here"
+              name="message"
+              id="message"
+              style="height: 100px"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- Button Submit  -->
+        <div class="my-4 d-flex justify-content-end">
+          <button
+            type="submit"
+            class="btn btn-dark mb-5"
+            onclick="submitData()"
+            id="submitBtn"
+          >
+            Submit
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="assets/js/contact.js"></script>
+    <script src="assets/js/nav.js"></script>
+  </body>
+</html>
