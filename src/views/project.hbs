@@ -28,6 +28,9 @@
       @import
       url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); * {
       font-family: "Poppins", sans-serif; }
+      @import
+      url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); * {
+      font-family: "Poppins", sans-serif; }
     </style>
   </head>
 
@@ -35,6 +38,8 @@
     <!-- Navbar Section -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
       <div class="container-fluid px-5">
+        <a class="navbar-brand" href="/">
+          <img src="/assets/img/logo.png" alt="" width="50" height="auto" />
         <a class="navbar-brand" href="/">
           <img src="/assets/img/logo.png" alt="" width="50" height="auto" />
         </a>
@@ -53,16 +58,21 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item mx-2">
               <a class="nav-link" href="/">Home</a>
+              <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item mx-2">
+              <a class="nav-link active" aria-current="page" href="/project">Add
+                Project</a>
               <a class="nav-link active" aria-current="page" href="/project">Add
                 Project</a>
             </li>
             <li class="nav-item mx-2">
               <a class="nav-link" href="/testimonial">Testimonials</a>
+              <a class="nav-link" href="/testimonial">Testimonials</a>
             </li>
           </ul>
 
+          <a class="btn btn-dark" role="button" href="/contact">
           <a class="btn btn-dark" role="button" href="/contact">
             Contact Me
           </a>
