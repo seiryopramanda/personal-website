@@ -27,8 +27,7 @@
     <style>
       @import
       url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); * {
-      font-family: "Poppins", sans-serif; }
-      @import
+      font-family: "Poppins", sans-serif; } @import
       url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); * {
       font-family: "Poppins", sans-serif; }
     </style>
@@ -38,8 +37,6 @@
     <!-- Navbar Section -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
       <div class="container-fluid px-5">
-        <a class="navbar-brand" href="/">
-          <img src="/assets/img/logo.png" alt="" width="50" height="auto" />
         <a class="navbar-brand" href="/">
           <img src="/assets/img/logo.png" alt="" width="50" height="auto" />
         </a>
@@ -58,21 +55,16 @@
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item mx-2">
               <a class="nav-link" href="/">Home</a>
-              <a class="nav-link" href="/">Home</a>
             </li>
             <li class="nav-item mx-2">
               <a class="nav-link active" aria-current="page" href="/project">Add
                 Project</a>
-              <a class="nav-link active" aria-current="page" href="/project">Add
-                Project</a>
             </li>
             <li class="nav-item mx-2">
-              <a class="nav-link" href="/testimonial">Testimonials</a>
               <a class="nav-link" href="/testimonial">Testimonials</a>
             </li>
           </ul>
 
-          <a class="btn btn-dark" role="button" href="/contact">
           <a class="btn btn-dark" role="button" href="/contact">
             Contact Me
           </a>
@@ -92,32 +84,35 @@
 
         <div class="row mb-3">
           <div class="col-sm-6 col-12">
-            <label for="startDate" class="form-label fw-bolder">Start Date</label>
+            <label for="start_date" class="form-label fw-bolder">Start Date</label>
             <input
               type="date"
               class="form-control"
-              id="startDate"
-              name="startDate"
+              id="start_date"
+              name="start_date"
             />
           </div>
           <div class="col-sm-6 col-12 mt-3 mt-sm-auto">
-            <label for="endDate" class="form-label fw-bolder">End Date</label>
+            <label for="end_date" class="form-label fw-bolder">End Date</label>
             <input
               type="date"
               class="form-control"
-              id="endDate"
-              name="endDate"
+              id="end_date"
+              name="end_date"
             />
           </div>
         </div>
 
         <div class="mb-3">
-          <label for="desc" class="form-label fw-bolder">Description</label>
+          <label
+            for="description"
+            class="form-label fw-bolder"
+          >Description</label>
           <div class="form-floating">
             <textarea
               class="form-control"
-              name="desc"
-              id="desc"
+              name="description"
+              id="description"
               style="height: 100px"
             ></textarea>
           </div>
@@ -131,7 +126,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name="technologies"
+                  name="tech"
                   value="fa-node-js"
                   id="node-js"
                 />
@@ -142,7 +137,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name="technologies"
+                  name="tech"
                   value="fa-react"
                   id="react"
                 />
@@ -155,7 +150,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name="technologies"
+                  name="tech"
                   value="fa-vuejs"
                   id="vuejs"
                 />
@@ -166,7 +161,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
-                  name="technologies"
+                  name="tech"
                   value="fa-angular"
                   id="angular"
                 />

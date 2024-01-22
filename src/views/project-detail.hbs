@@ -85,9 +85,9 @@
         <div class="col-4">
           <h5 class="fw-bolder">Duration</h5>
           <i class="fa-solid fa-calendar-days mb-3"></i>
-          {{data.startDate}}
+          {{data.start_date}}
           -
-          {{data.endDate}}
+          {{data.end_date}}
           <br />
           <i class="fa-regular fa-clock"></i>
           {{data.duration}}
@@ -95,7 +95,7 @@
           <h5 class="mt-4 fw-bolder">Technologies</h5>
           <div class="row">
             <div class="col">
-              {{#each data.technologies}}
+              {{#each data.tech}}
                 <span><i class="fa-brands {{this}} me-2 fs-4"></i></span>
               {{/each}}
             </div>
@@ -103,7 +103,7 @@
         </div>
       </div>
       <p>
-        {{data.desc}}
+        {{data.description}}
       </p>
     </div>
   </body>
