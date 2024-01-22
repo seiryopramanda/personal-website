@@ -53,16 +53,14 @@
             <li class="nav-item mx-2">
               <a class="nav-link" href="/">Home</a>
             </li>
-            <li class="nav-item mx-2">
-              <a
-                class="nav-link fw-bold active"
-                aria-current="page"
-                href="/project"
-              >Add Project</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="/testimonial">Testimonials</a>
-            </li>
+            {{#if isLogin}}
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="/project">Add Project</a>
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="/testimonial">Testimonials</a>
+              </li>
+            {{/if}}
           </ul>
 
           <ul class="navbar-nav me-3 mb-2 mb-lg-0">
@@ -76,7 +74,7 @@
               </li>
             {{else}}
               <li class="nav-item">
-                <a class="nav-link" href="/register">Register</a>
+                <a class="nav-link fw-bold active" href="/register">Register</a>
               </li>
               <li class="nav-item ms-3">
                 <a class="nav-link" href="/login">Login</a>
@@ -84,49 +82,49 @@
             {{/if}}
           </ul>
 
-          <a class="btn btn-dark" role="button" href="/contact">
-            Contact Me
-          </a>
+          {{#if isLogin}}
+            <a class="btn btn-dark" role="button" href="/contact">
+              Contact Me
+            </a>
+          {{/if}}
         </div>
       </div>
     </nav>
 
-    <!-- Container Body  -->
-    <div class="container py-5">
-      <h2 class="text-center fw-bold mb-5">{{data.title}}</h2>
+    <div class="container px-5 my-5" style="max-width: 500px">
+      <form method="post" action="/register">
+        <legend class="text-center fw-bold mb-5">REGISTER YOUR ACCOUNT</legend>
 
-      <div class="row">
-        <div class="col-8 mb-4">
-          <img
-            src="/assets/img/project.png"
-            class="img-fluid"
-            style="width: 650px"
-            alt="detail"
+        <div class="mb-3">
+          <label for="name" class="form-label fw-bolder">Name</label>
+          <input type="text" name="name" class="form-control" id="name" />
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label fw-bolder">Email</label>
+          <input type="email" name="email" class="form-control" id="email" />
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label fw-bolder">Password</label>
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            id="password"
           />
         </div>
-        <div class="col-4">
-          <h5 class="fw-bolder">Duration</h5>
-          <i class="fa-solid fa-calendar-days mb-3"></i>
-          {{data.start_date}}
-          -
-          {{data.end_date}}
-          <br />
-          <i class="fa-regular fa-clock"></i>
-          {{data.duration}}
 
-          <h5 class="mt-4 fw-bolder">Technologies</h5>
-          <div class="row">
-            <div class="col">
-              {{#each data.tech}}
-                <span><i class="fa-brands {{this}} me-2 fs-4"></i></span>
-              {{/each}}
-            </div>
-          </div>
+        <!-- Button Submit  -->
+        <div class="my-4 d-flex justify-content-end">
+          <button
+            type="submit"
+            class="btn btn-dark mb-5"
+            onclick="submitData()"
+            id="submitBtn"
+          >
+            Submit
+          </button>
         </div>
-      </div>
-      <p>
-        {{data.description}}
-      </p>
+      </form>
     </div>
   </body>
 </html>

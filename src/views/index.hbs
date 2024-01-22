@@ -27,9 +27,6 @@
       @import
       url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); * {
       font-family: "Poppins", sans-serif; }
-      @import
-      url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); * {
-      font-family: "Poppins", sans-serif; }
     </style>
   </head>
 
@@ -37,8 +34,6 @@
     <!-- Navbar Section -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
       <div class="container-fluid px-5">
-        <a class="navbar-brand" href="/">
-          <img src="/assets/img/logo.png" alt="" width="50" height="auto" />
         <a class="navbar-brand" href="/">
           <img src="/assets/img/logo.png" alt="" width="50" height="auto" />
         </a>
@@ -56,26 +51,57 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item mx-2">
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
-              <a class="nav-link active" aria-current="page" href="/">Home</a>
+              <a
+                class="nav-link fw-bold active"
+                aria-current="page"
+                href="/"
+              >Home</a>
             </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="/project">Add Project</a>
-              <a class="nav-link" href="/project">Add Project</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="/testimonial">Testimonials</a>
-              <a class="nav-link" href="/testimonial">Testimonials</a>
-            </li>
+            {{#if isLogin}}
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="/project">Add Project</a>
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="/testimonial">Testimonials</a>
+              </li>
+            {{/if}}
           </ul>
 
-          <a class="btn btn-dark" role="button" href="/contact">
-          <a class="btn btn-dark" role="button" href="/contact">
-            Contact Me
-          </a>
+          <ul class="navbar-nav me-3 mb-2 mb-lg-0">
+            {{#if isLogin}}
+              <li class="nav-item">
+                <a class="nav-link fw-bold active">Hello,
+                  {{user}}</a>
+              </li>
+              <li class="nav-item ms-3">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+            {{else}}
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Register</a>
+              </li>
+              <li class="nav-item ms-3">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+            {{/if}}
+          </ul>
+
+          {{#if isLogin}}
+            <a class="btn btn-dark" role="button" href="/contact">
+              Contact Me
+            </a>
+          {{/if}}
         </div>
       </div>
     </nav>
+
+    {{#if messages.success}}
+      <div class="alert alert-success" role="alert">
+        <div class="container d-flex justify-content-center">
+          {{messages.success}}
+        </div>
+      </div>
+    {{/if}}
 
     <!-- Container Body -->
     <div class="container bg-white my-5 rounded shadow">
@@ -108,8 +134,7 @@
             target="_blank"
             href="assets/pdf/resume.pdf"
           >
-            Download CV
-            <i class="fa fa-download"></i>
+
             Download CV
             <i class="fa fa-download"></i>
           </a>
@@ -189,23 +214,23 @@
                 />
                 <div class="card-body">
                   <h5 class="card-title fw-bolder"><a
-                      href="/project-detail/{{@index}}"
+                      href="/project-detail/{{this.id}}"
                       class="link-dark link-offset-2 link-underline link-underline-opacity-0"
                     >{{this.title}}</a></h5>
                   <p class="card-text">Duration : {{duration}}</p>
-                  <p class="card-text">{{this.desc}}</p>
+                  <p class="card-text">{{this.description}}</p>
                   <p class="card-text d-flex">
-                    {{#each this.technologies}}
+                    {{#each this.tech}}
                       <i class="fa-brands {{this}} me-2 fs-4"></i>
                     {{/each}}
                   </p>
                   <div class="d-flex">
                     <a
-                      href="/edit-project/{{@index}}"
+                      href="/edit-project/{{this.id}}"
                       class="btn btn-dark flex-fill m-1"
                     >Edit</a>
                     <a
-                      href="/delete/{{@index}}"
+                      href="/delete/{{this.id}}"
                       class="btn btn-dark flex-fill m-1"
                     >Delete</a>
                   </div>

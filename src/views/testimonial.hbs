@@ -59,11 +59,30 @@
             </li>
             <li class="nav-item mx-2">
               <a
-                class="nav-link active"
+                class="nav-link fw-bold active"
                 aria-current="page"
                 href="/testimonial"
               >Testimonials</a>
             </li>
+          </ul>
+
+          <ul class="navbar-nav me-3 mb-2 mb-lg-0">
+            {{#if isLogin}}
+              <li class="nav-item">
+                <a class="nav-link fw-bold active">Hello,
+                  {{user}}</a>
+              </li>
+              <li class="nav-item ms-3">
+                <a class="nav-link" href="/logout">Logout</a>
+              </li>
+            {{else}}
+              <li class="nav-item">
+                <a class="nav-link" href="/register">Register</a>
+              </li>
+              <li class="nav-item ms-3">
+                <a class="nav-link" href="/login">Login</a>
+              </li>
+            {{/if}}
           </ul>
 
           <a class="btn btn-dark" role="button" href="/contact">
