@@ -28,6 +28,7 @@
       @import
       url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); * {
       font-family: "Poppins", sans-serif; } @import
+      font-family: "Poppins", sans-serif; } @import
       url("https://fonts.googleapis.com/css2?family=Poppins&display=swap"); * {
       font-family: "Poppins", sans-serif; }
     </style>
@@ -107,18 +108,24 @@
         <div class="row mb-3">
           <div class="col-sm-6 col-12">
             <label for="start_date" class="form-label fw-bolder">Start Date</label>
+            <label for="start_date" class="form-label fw-bolder">Start Date</label>
             <input
               type="date"
               class="form-control"
+              id="start_date"
+              name="start_date"
               id="start_date"
               name="start_date"
             />
           </div>
           <div class="col-sm-6 col-12 mt-3 mt-sm-auto">
             <label for="end_date" class="form-label fw-bolder">End Date</label>
+            <label for="end_date" class="form-label fw-bolder">End Date</label>
             <input
               type="date"
               class="form-control"
+              id="end_date"
+              name="end_date"
               id="end_date"
               name="end_date"
             />
@@ -130,9 +137,15 @@
             for="description"
             class="form-label fw-bolder"
           >Description</label>
+          <label
+            for="description"
+            class="form-label fw-bolder"
+          >Description</label>
           <div class="form-floating">
             <textarea
               class="form-control"
+              name="description"
+              id="description"
               name="description"
               id="description"
               style="height: 100px"
@@ -149,6 +162,7 @@
                   class="form-check-input"
                   type="checkbox"
                   name="tech"
+                  name="tech"
                   value="fa-node-js"
                   id="node-js"
                 />
@@ -159,6 +173,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
+                  name="tech"
                   name="tech"
                   value="fa-react"
                   id="react"
@@ -173,6 +188,7 @@
                   class="form-check-input"
                   type="checkbox"
                   name="tech"
+                  name="tech"
                   value="fa-vuejs"
                   id="vuejs"
                 />
@@ -183,6 +199,7 @@
                 <input
                   class="form-check-input"
                   type="checkbox"
+                  name="tech"
                   name="tech"
                   value="fa-angular"
                   id="angular"

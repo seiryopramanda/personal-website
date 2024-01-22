@@ -135,6 +135,7 @@
             href="assets/pdf/resume.pdf"
           >
 
+
             Download CV
             <i class="fa fa-download"></i>
           </a>
@@ -215,11 +216,14 @@
                 <div class="card-body">
                   <h5 class="card-title fw-bolder"><a
                       href="/project-detail/{{this.id}}"
+                      href="/project-detail/{{this.id}}"
                       class="link-dark link-offset-2 link-underline link-underline-opacity-0"
                     >{{this.title}}</a></h5>
                   <p class="card-text">Duration : {{duration}}</p>
                   <p class="card-text">{{this.description}}</p>
+                  <p class="card-text">{{this.description}}</p>
                   <p class="card-text d-flex">
+                    {{#each this.tech}}
                     {{#each this.tech}}
                       <i class="fa-brands {{this}} me-2 fs-4"></i>
                     {{/each}}
@@ -227,9 +231,11 @@
                   <div class="d-flex">
                     <a
                       href="/edit-project/{{this.id}}"
+                      href="/edit-project/{{this.id}}"
                       class="btn btn-dark flex-fill m-1"
                     >Edit</a>
                     <a
+                      href="/delete/{{this.id}}"
                       href="/delete/{{this.id}}"
                       class="btn btn-dark flex-fill m-1"
                     >Delete</a>

@@ -50,11 +50,14 @@ app.post("/project", handlePostProject);
 app.get("/delete/:id", handleDeleteProject);
 app.get("/edit-project/:id", editProject);
 app.post("/edit-project/:id", editPostProject);
+app.post("/edit-project/:id", editPostProject);
 
 const data = [];
 const hbs = require("hbs");
 const Handlebars = require("handlebars");
 
+hbs.registerHelper("isChecked", (tech, value) => {
+  return tech.includes(value) ? "checked" : "";
 hbs.registerHelper("isChecked", (tech, value) => {
   return tech.includes(value) ? "checked" : "";
 });
@@ -181,6 +184,38 @@ async function handlePostProject(req, res) {
 }
 
 async function projectDetail(req, res) {
+async function handlePostProject(req, res) {
+  try {
+    const { title, start_date, end_date, description, tech } = req.body;
+
+    const dateOne = new Date(start_date);
+    const dateTwo = new Date(end_date);
+    const time = Math.abs(dateTwo - dateOne);
+    const days = Math.floor(time / (1000 * 60 * 60 * 24));
+    const months = Math.floor(time / (1000 * 60 * 60 * 24 * 30));
+    const years = Math.floor(time / (1000 * 60 * 60 * 24) / 365);
+
+    let duration = [];
+    if (days < 24) {
+      duration += days + " Days";
+    } else if (months < 12) {
+      duration += months + " Month";
+    } else if (years < 365) {
+      duration += years + " Years";
+    }
+
+    await SequelizePool.query(
+      `INSERT INTO projects(title,start_date,end_date,description,tech, "createdAt", "updatedAt",duration) 
+      VALUES ('${title}','${start_date}','${end_date}' ,'${description}','{${tech}}',NOW(), NOW(), '${duration}')`
+    );
+
+    res.redirect("/");
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function projectDetail(req, res) {
   const { id } = req.params;
   const projectDetail = await SequelizePool.query(
     `SELECT * FROM projects WHERE id = ${id} `
@@ -193,6 +228,7 @@ async function projectDetail(req, res) {
   });
 }
 
+async function editProject(req, res) {
 async function editProject(req, res) {
   const { id } = req.params;
   const editProject = await SequelizePool.query(
@@ -207,6 +243,45 @@ async function editProject(req, res) {
   });
 }
 
+async function editPostProject(req, res) {
+  try {
+    const { id } = req.params;
+    const { title, start_date, end_date, description, tech } = req.body;
+
+    const dateOne = new Date(start_date);
+    const dateTwo = new Date(end_date);
+    const time = Math.abs(dateTwo - dateOne);
+    const days = Math.floor(time / (1000 * 60 * 60 * 24));
+    const months = Math.floor(time / (1000 * 60 * 60 * 24 * 30));
+    const years = Math.floor(time / (1000 * 60 * 60 * 24) / 365);
+    let duration = [];
+    if (days < 24) {
+      duration += days + " Days";
+    } else if (months < 12) {
+      duration += months + " Month";
+    } else if (years < 365) {
+      duration += years + " Years";
+    }
+
+    await SequelizePool.query(
+      `UPDATE projects SET title='${title}', start_date='${start_date}', end_date='${end_date}', 
+      description='${description}',"updatedAt"=now(), duration='${duration}', tech='{${tech}}' where id = ${id}`
+    );
+    res.redirect("/");
+  } catch (error) {
+    throw error;
+  }
+}
+
+async function handleDeleteProject(req, res) {
+  try {
+    const { id } = req.params;
+    await SequelizePool.query(`DELETE FROM projects WHERE id = ${id}`);
+
+    res.redirect("/");
+  } catch (error) {
+    throw error;
+  }
 async function editPostProject(req, res) {
   try {
     const { id } = req.params;
