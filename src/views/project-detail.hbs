@@ -51,18 +51,20 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item mx-2">
-              <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item mx-2">
               <a
                 class="nav-link fw-bold active"
                 aria-current="page"
-                href="/project"
-              >Add Project</a>
+                href="/"
+              >Home</a>
             </li>
-            <li class="nav-item mx-2">
-              <a class="nav-link" href="/testimonial">Testimonials</a>
-            </li>
+            {{#if isLogin}}
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="/project">Add Project</a>
+              </li>
+              <li class="nav-item mx-2">
+                <a class="nav-link" href="/testimonial">Testimonials</a>
+              </li>
+            {{/if}}
           </ul>
 
           <ul class="navbar-nav me-3 mb-2 mb-lg-0">
@@ -84,9 +86,11 @@
             {{/if}}
           </ul>
 
-          <a class="btn btn-dark" role="button" href="/contact">
-            Contact Me
-          </a>
+          {{#if isLogin}}
+            <a class="btn btn-dark" role="button" href="/contact">
+              Contact Me
+            </a>
+          {{/if}}
         </div>
       </div>
     </nav>
@@ -98,10 +102,9 @@
       <div class="row">
         <div class="col-8 mb-4">
           <img
-            src="/assets/img/project.png"
+            src="/uploads/{{data.image}}"
             class="img-fluid"
-            style="width: 650px"
-            alt="detail"
+            alt="image-review"
           />
         </div>
         <div class="col-4">
@@ -113,6 +116,9 @@
           <br />
           <i class="fa-regular fa-clock"></i>
           {{data.duration}}
+
+          <h5 class="mt-4 fw-bolder">Author</h5>
+          {{data.author}}
 
           <h5 class="mt-4 fw-bolder">Technologies</h5>
           <div class="row">

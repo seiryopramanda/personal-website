@@ -94,7 +94,11 @@
 
     <!-- Form Body -->
     <div class="container px-5 my-5" style="max-width: 500px">
-      <form action="/edit-project/{{data.id}}" method="POST">
+      <form
+        action="/edit-project/{{data.id}}"
+        method="POST"
+        enctype="multipart/form-data"
+      >
 
         <legend class="text-center fw-bold mb-4">EDIT MY PROJECT</legend>
         <input type="hidden" name="id" value="{{data.id}}" />
@@ -205,13 +209,14 @@
         </div>
 
         <div class="mb-3">
-          <label for="image" class="form-label">Upload Image</label>
+          <label for="image" class="form-label fw-bolder">Upload Image</label>
           <input
             class="form-control"
             type="file"
             name="image"
             id="image"
             accept="image/*"
+            value="{{data.image}}"
           />
           <!-- <img class="input-icon" src="assets/icon/file.png" alt="file" /> -->
         </div>

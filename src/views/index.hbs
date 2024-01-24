@@ -135,7 +135,6 @@
             href="assets/pdf/resume.pdf"
           >
 
-
             Download CV
             <i class="fa fa-download"></i>
           </a>
@@ -143,7 +142,6 @@
           <!-- Sosial Media -->
           <span class="d-flex">
             <a
-              class="btn btn-dark fs-2 p-3 me-5 rounded-circle"
               class="btn btn-dark fs-2 p-3 me-5 rounded-circle"
               role="button"
               href="https://www.linkedin.com/in/seiryopramanda/"
@@ -154,7 +152,6 @@
 
             <a
               class="btn btn-dark fs-2 p-3 me-5 rounded-circle"
-              class="btn btn-dark fs-2 p-3 me-5 rounded-circle"
               role="button"
               href="https://www.instagram.com/seiprambs/"
               target="_blank"
@@ -164,7 +161,6 @@
 
             <a
               class="btn btn-dark fs-2 p-3 me-5 rounded-circle"
-              class="btn btn-dark fs-2 p-3 me-5 rounded-circle"
               role="button"
               href="https://facebook.com/"
               target="_blank"
@@ -173,7 +169,6 @@
             </a>
 
             <a
-              class="btn btn-dark fs-2 p-3 me-5 rounded-circle"
               class="btn btn-dark fs-2 p-3 me-5 rounded-circle"
               role="button"
               href="https://twitter.com/"
@@ -209,36 +204,38 @@
             <div class="col mx-2 mb-5">
               <div class="card" style="width: 20rem;">
                 <img
-                  src="/assets/img/project.png"
-                  class="card-img-top"
-                  alt="..."
+                  src="/uploads/{{this.image}}"
+                  class="img-fluid"
+                  alt="image-review"
                 />
                 <div class="card-body">
                   <h5 class="card-title fw-bolder"><a
                       href="/project-detail/{{this.id}}"
-                      href="/project-detail/{{this.id}}"
                       class="link-dark link-offset-2 link-underline link-underline-opacity-0"
                     >{{this.title}}</a></h5>
-                  <p class="card-text">Duration : {{duration}}</p>
-                  <p class="card-text">{{this.description}}</p>
+                  <p class="card-text">
+                    Duration :
+                    {{this.duration}}
+                    <br />
+                    {{this.author}}</p>
+
                   <p class="card-text">{{this.description}}</p>
                   <p class="card-text d-flex">
-                    {{#each this.tech}}
                     {{#each this.tech}}
                       <i class="fa-brands {{this}} me-2 fs-4"></i>
                     {{/each}}
                   </p>
                   <div class="d-flex">
-                    <a
-                      href="/edit-project/{{this.id}}"
-                      href="/edit-project/{{this.id}}"
-                      class="btn btn-dark flex-fill m-1"
-                    >Edit</a>
-                    <a
-                      href="/delete/{{this.id}}"
-                      href="/delete/{{this.id}}"
-                      class="btn btn-dark flex-fill m-1"
-                    >Delete</a>
+                    {{#if this.isLogin}}
+                      <a
+                        href="/edit-project/{{this.id}}"
+                        class="btn btn-dark flex-fill m-1"
+                      >Edit</a>
+                      <a
+                        href="/delete/{{this.id}}"
+                        class="btn btn-dark flex-fill m-1"
+                      >Delete</a>
+                    {{/if}}
                   </div>
                 </div>
               </div>
